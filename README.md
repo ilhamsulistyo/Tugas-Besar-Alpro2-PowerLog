@@ -1,27 +1,27 @@
-# POWERLOG - Sistem Manajemen Tagihan Bulanan Listrik Rumah Tangga
+# POWERLOG - Sistem Pemantauan Enegrgi(listrik) Rumah Tangga
 
-POWERLOG adalah aplikasi sederhana berbasis **Golang** untuk apa yahh.
+POWERLOG adalah aplikasi sederhana berbasis **Golang** untuk mempermudah pencatatan energi rumah tangga
 
 Program ini dibuat untuk memudahkan permasalahan rumah tangga, lebih spesifik pada pencatatan listrik rumah tangga, antara lain:
-1.
-2.
-3.
-4.
-5.
+-Digitalisasi data alat listrik.
+-Kalkulasi konsumsi energi harian.
+-Deteksi perangkat paling boros.
 
 Program ini berfungsi untuk melatih pemahaman kita di bidang:
-1.
-2.
-3.
-4.
-5.
+-Struct dan Array global.
+-Shifting indeks array (Hapus/Ubah).
+-Sequential Search pada nama.
+-Binary Search pada ruangan.
+-Selection Sort pada abjad.
+-Insertion Sort pada watt.
 
 Fitur program ini antara lain adalah:
-1.
-2.
-3.
-4.
-5.
+-CRUD perangkat elektronik.
+-Pencarian Nama dan Ruangan.
+-Pengurutan Energi Tertinggi dan Abjad.
+-Kalkulator statistik total daya.
+-Looping menu beranda utama.
+
 
 # Struktur Data
 
