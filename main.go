@@ -136,36 +136,51 @@ func updateelektronik() {
 
 	}
 }
-
 func deleteelektronik() {
 	var pilihan string
 	var addloop bool = false
 	for addloop == false {
 		var idx int
 
-		mencatatPerangkat()
+		fmt.Println("=====================================================")
+		fmt.Println("Daftar Perangkat Saat Ini:")
+		if perangkat == 0 {
+			fmt.Println("[ Data Kosong ]")
+		} else {
+			for i := 0; i < perangkat; i++ {
+				fmt.Printf("%d. %s (Ruangan: %s, %.1f watt)\n", i+1, daftarElektronik[i].nama, daftarElektronik[i].ruangan, daftarElektronik[i].watt)
+			}
+		}
+		fmt.Println("=====================================================")
+
 		fmt.Print("Masukkan nomor perangkat yang ingin dihapus: ")
 		fmt.Scan(&idx)
 		idx--
 
-		for i := idx; i < perangkat-1; i++ {
-			daftarElektronik[i] = daftarElektronik[i+1]
-		}	
+		if idx >= 0 && idx < perangkat {
+
+			for i := idx; i < perangkat-1; i++ {
+				daftarElektronik[i] = daftarElektronik[i+1]
+			}
+
+			daftarElektronik[perangkat-1] = elektronik{}
+
 			perangkat--
 			fmt.Println("Perangkat berhasil dihapus!")
 		} else {
-			fmt.Println("Perangkat tidak ditemukan!")
+			fmt.Println("Perangkat tidak ditemukan atau nomor salah!")
 		}
+
+		fmt.Println("=====================================================")
 		fmt.Println("Ketik 0 untuk Exit ke beranda")
-		fmt.Println("Ketik 1 untuk Lanjut")
-		fmt.Println("Pilih: ")
+		fmt.Println("Ketik 1 untuk Hapus perangkat lain")
+		fmt.Print("Pilih: ")
 		fmt.Scan(&pilihan)
 		if pilihan == "0" {
 			addloop = true
 		} else {
 			addloop = false
 		}
-
 	}
 }
 
@@ -340,6 +355,10 @@ func InsertionSortWatt() {
 			}
 			return
 		}
+		var temp [1000]elektronik
+		for i := 0; i < perangkat; i++ {
+			temp[i] = daftarElektronik[i]
+		}
 
 		var i int
 		for i = 1; i < perangkat; i++ {
@@ -347,15 +366,15 @@ func InsertionSortWatt() {
 			j := i - 1
 
 			for j >= 0 && daftarElektronik[j].watt < key.watt {
-				daftarElektronik[j+1] = daftarElektronik[j]
+				temp[j+1] = temp[j]
 				j = j - 1
 			}
-			daftarElektronik[j+1] = key
+			temp[j+1] = key
 		}
 		fmt.Println("=====================================================")
 		fmt.Println("Konsumsi daya tertinggi sampai terendah")
 		for i := 0; i < perangkat; i++ {
-			fmt.Printf("%d. Nama: %s, Ruangan: %s, Daya: %.1f watt, Durasi: %.1f menit\n", i+1, daftarElektronik[i].nama, daftarElektronik[i].ruangan, daftarElektronik[i].watt, daftarElektronik[i].durasi)
+			fmt.Printf("%d. Nama: %s, Ruangan: %s, Daya: %.1f watt, Durasi: %.1f menit\n", i+1, temp[i].nama, temp[i].ruangan, temp[i].watt, temp[i].durasi)
 		}
 		fmt.Println("=====================================================")
 
