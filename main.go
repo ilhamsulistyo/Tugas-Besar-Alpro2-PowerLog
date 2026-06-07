@@ -41,8 +41,9 @@ func main() {
 		} else if beranda == 4 {
 			mencatatPerangkat()
 		} else if beranda == 5 {
-		} else if beranda == 6 {
 			sequentialSearch()
+		} else if beranda == 6 {
+			binarySearch()
 		} else if beranda == 7 {
 			SelectionSortPerangkat()
 		} else if beranda == 8 {
