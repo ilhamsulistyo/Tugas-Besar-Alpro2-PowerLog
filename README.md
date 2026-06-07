@@ -137,18 +137,19 @@ type Tagihan struct {
 # 📋 Menu Program
 
 ```bash
-===== SIMTAB =====
-
-1. Tambah Tagihan
-2. Ubah Tagihan
-3. Hapus Tagihan
-4. Tampilkan Data
-5. Sequential Search
-6. Binary Search
-7. Selection Sort
-8. Insertion Sort
-9. Statistik
-10. Keluar
+=====================================================
+Selamat datang di PowerLog!
+1. Tambah Perangkat Elektronik
+2. Ubah Perangkat Elektronik
+3. Hapus Perangkat Elektronik
+4. Tampilkan Perangkat Elektronik
+5. Sequential Search Perangkat Elektronik
+6. Binary Search Perangkat Elektronik Pada Ruangan
+7. Selection Sort Perangkat Elektronik Berdasarkan Abjad
+8. Insertion Sort Perangkat Elektronik Berdasarkan Daya(Watt)
+9. Statistik Perangkat Elektronik
+0. Keluar
+=====================================================
 ```
 
 ---
