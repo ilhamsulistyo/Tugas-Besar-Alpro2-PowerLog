@@ -283,23 +283,25 @@ func SelectionSortPerangkat() {
 			}
 			return
 		}
+		var temp [1000]elektronik
+		for i := 0; i < perangkat; i++ {
+			temp[i] = daftarElektronik[i]
+		}
 		var idx_min int
 
 		for i := 0; i < perangkat-1; i++ {
 			idx_min = i
 			for j := i + 1; j < perangkat; j++ {
-				if daftarElektronik[idx_min].watt < daftarElektronik[j].watt {
+				if temp[j].nama < temp[idx_min].nama { // Urut abjad nama
 					idx_min = j
 				}
 			}
-			temp := daftarElektronik[idx_min]
-			daftarElektronik[idx_min] = daftarElektronik[i]
-			daftarElektronik[i] = temp
+			temp[i], temp[idx_min] = temp[idx_min], temp[i]
 		}
 		fmt.Println("=====================================================")
-		fmt.Println("Konsumsi daya tertinggi sampai terendah")
+		fmt.Println("Daftar perangkat diurutkan berdasarkan Abjad Nama:")
 		for i := 0; i < perangkat; i++ {
-			fmt.Printf("%d. Nama: %s, Ruangan: %s, Daya: %.1f watt, Durasi: %.1f menit\n", i+1, daftarElektronik[i].nama, daftarElektronik[i].ruangan, daftarElektronik[i].watt, daftarElektronik[i].durasi)
+			fmt.Printf("%d. Nama: %s, Ruangan: %s\n", i+1, temp[i].nama, temp[i].ruangan)
 		}
 		fmt.Println("=====================================================")
 
