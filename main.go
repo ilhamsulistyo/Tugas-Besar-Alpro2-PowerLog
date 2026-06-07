@@ -80,9 +80,7 @@ func addelektronik() {
 		fmt.Println("Perangkat berhasil ditambahkan!")
 
 		fmt.Println("=====================================================")
-
-		fmt.Println("Ketik 0 untuk Exit ke beranda")
-		fmt.Println("Ketik 1 untuk Lanjut")
+		fmt.Println("Ketik 0 untuk Exit ke beranda atau Ketik 1 untuk Lanjut")
 		fmt.Println("Pilih: ")
 		fmt.Scan(&pilihan)
 		if pilihan == "0" {
@@ -90,7 +88,6 @@ func addelektronik() {
 		} else {
 			addloop = false
 		}
-
 	}
 }
 
@@ -134,16 +131,15 @@ func updateelektronik() {
 			fmt.Println("Perangkat tidak ditemukan!")
 		}
 
-		fmt.Printf("Ketik 0 untuk Exit ke beranda \n")
-		fmt.Printf("Ketik 1 untuk Lanjut \n")
-		fmt.Printf("Pilih: ")
+		fmt.Println("=====================================================")
+		fmt.Println("Ketik 0 untuk Exit ke beranda atau Ketik 1 untuk Lanjut")
+		fmt.Println("Pilih: ")
 		fmt.Scan(&pilihan)
 		if pilihan == "0" {
 			addloop = true
 		} else {
 			addloop = false
 		}
-
 	}
 }
 func deleteelektronik() {
@@ -182,9 +178,8 @@ func deleteelektronik() {
 		}
 
 		fmt.Println("=====================================================")
-		fmt.Println("Ketik 0 untuk Exit ke beranda")
-		fmt.Println("Ketik 1 untuk Hapus perangkat lain")
-		fmt.Print("Pilih: ")
+		fmt.Println("Ketik 0 untuk Exit ke beranda atau Ketik 1 untuk Lanjut")
+		fmt.Println("Pilih: ")
 		fmt.Scan(&pilihan)
 		if pilihan == "0" {
 			addloop = true
@@ -208,8 +203,7 @@ func mencatatPerangkat() {
 			}
 		}
 		fmt.Println("=====================================================")
-		fmt.Println("Ketik 0 untuk Exit ke beranda")
-		fmt.Println("Ketik 1 untuk Lanjut")
+		fmt.Println("Ketik 0 untuk Exit ke beranda atau Ketik 1 untuk Lanjut")
 		fmt.Println("Pilih: ")
 		fmt.Scan(&pilihan)
 		if pilihan == "0" {
@@ -217,7 +211,6 @@ func mencatatPerangkat() {
 		} else {
 			addloop = false
 		}
-
 	}
 }
 
@@ -236,14 +229,13 @@ func sequentialSearch() {
 			if daftarElektronik[i].nama == namaCari {
 				fmt.Printf("Perangkat ditemukan: %s, Ruangan: %s, Daya: %.1f watt, Durasi: %.1f menit\n", daftarElektronik[i].nama, daftarElektronik[i].ruangan, daftarElektronik[i].watt, daftarElektronik[i].durasi)
 				found = true
-				break
 			}
 		}
 		if !found {
 			fmt.Println("Perangkat tidak ditemukan!")
 		}
-		fmt.Println("Ketik 0 untuk Exit ke beranda")
-		fmt.Println("Ketik 1 untuk Lanjut")
+		fmt.Println("=====================================================")
+		fmt.Println("Ketik 0 untuk Exit ke beranda atau Ketik 1 untuk Lanjut")
 		fmt.Println("Pilih: ")
 		fmt.Scan(&pilihan)
 		if pilihan == "0" {
@@ -251,27 +243,36 @@ func sequentialSearch() {
 		} else {
 			addloop = false
 		}
-
 	}
 }
-
 func binarySearch() {
 	var pilihan string
 	var addloop bool = false
 	for addloop == false {
 		var ruanganCari string
-		fmt.Println("=====================================================")
 		fmt.Print("Masukkan ruangan yang ingin dicari: ")
 		fmt.Scan(&ruanganCari)
-		fmt.Println("=====================================================")
+
 		var found bool = false
 		kiri := 0
 		kanan := perangkat - 1
+
 		for kiri <= kanan {
 			tengah := (kiri + kanan) / 2
 			if daftarElektronik[tengah].ruangan == ruanganCari {
-				fmt.Printf("Perangkat ditemukan: %s, Ruangan: %s, Daya: %.1f watt, Durasi: %.1f menit\n", daftarElektronik[tengah].nama, daftarElektronik[tengah].ruangan, daftarElektronik[tengah].watt, daftarElektronik[tengah].durasi)
 				found = true
+				i := tengah
+				for i >= 0 && daftarElektronik[i].ruangan == ruanganCari {
+					fmt.Printf("Perangkat ditemukan: %s, Ruangan: %s, Daya: %.1f watt, Durasi: %.1f menit\n",
+						daftarElektronik[i].nama, daftarElektronik[i].ruangan, daftarElektronik[i].watt, daftarElektronik[i].durasi)
+					i--
+				}
+				i = tengah + 1
+				for i < perangkat && daftarElektronik[i].ruangan == ruanganCari {
+					fmt.Printf("Perangkat ditemukan: %s, Ruangan: %s, Daya: %.1f watt, Durasi: %.1f menit\n",
+						daftarElektronik[i].nama, daftarElektronik[i].ruangan, daftarElektronik[i].watt, daftarElektronik[i].durasi)
+					i++
+				}
 				break
 			} else if daftarElektronik[tengah].ruangan < ruanganCari {
 				kiri = tengah + 1
@@ -293,7 +294,6 @@ func binarySearch() {
 		}
 	}
 }
-
 func SelectionSortPerangkat() {
 	var pilihan string
 	var addloop bool = false
@@ -301,21 +301,7 @@ func SelectionSortPerangkat() {
 		if perangkat == 0 {
 			fmt.Println("=====================================================")
 			fmt.Println("Belum ada perangkat yang terdaftar untuk diurutkan!")
-			for addloop == false {
-				fmt.Println("=====================================================")
-
-				fmt.Println("Ketik 0 untuk Exit ke beranda")
-				fmt.Println("Ketik 1 untuk Lanjut")
-				fmt.Println("Pilih: ")
-				fmt.Scan(&pilihan)
-				if pilihan == "0" {
-					addloop = true
-				} else {
-					addloop = false
-				}
-
-			}
-			return
+			fmt.Println("=====================================================")
 		}
 		var temp [1000]elektronik
 		for i := 0; i < perangkat; i++ {
@@ -338,9 +324,7 @@ func SelectionSortPerangkat() {
 			fmt.Printf("%d. Nama: %s, Ruangan: %s\n", i+1, temp[i].nama, temp[i].ruangan)
 		}
 		fmt.Println("=====================================================")
-
-		fmt.Println("Ketik 0 untuk Exit ke beranda")
-		fmt.Println("Ketik 1 untuk Lanjut")
+		fmt.Println("Ketik 0 untuk Exit ke beranda atau Ketik 1 untuk Lanjut")
 		fmt.Println("Pilih: ")
 		fmt.Scan(&pilihan)
 		if pilihan == "0" {
@@ -348,7 +332,6 @@ func SelectionSortPerangkat() {
 		} else {
 			addloop = false
 		}
-
 	}
 }
 
@@ -397,9 +380,7 @@ func InsertionSortWatt() {
 			fmt.Printf("%d. Nama: %s, Ruangan: %s, Daya: %.1f watt, Durasi: %.1f menit\n", i+1, temp[i].nama, temp[i].ruangan, temp[i].watt, temp[i].durasi)
 		}
 		fmt.Println("=====================================================")
-
-		fmt.Println("Ketik 0 untuk Exit ke beranda")
-		fmt.Println("Ketik 1 untuk Lanjut")
+		fmt.Println("Ketik 0 untuk Exit ke beranda atau Ketik 1 untuk Lanjut")
 		fmt.Println("Pilih: ")
 		fmt.Scan(&pilihan)
 		if pilihan == "0" {
@@ -407,7 +388,6 @@ func InsertionSortWatt() {
 		} else {
 			addloop = false
 		}
-
 	}
 }
 
@@ -453,8 +433,7 @@ func tampilStatistik() {
 		fmt.Printf("- Ruangan  : %s\n", temp[0].ruangan)
 		fmt.Printf("- Konsumsi : %.2f Wh\n", konsumsi)
 		fmt.Println("=====================================================")
-		fmt.Println("Ketik 0 untuk Exit ke beranda")
-		fmt.Println("Ketik 1 untuk Lanjut")
+		fmt.Println("Ketik 0 untuk Exit ke beranda atau Ketik 1 untuk Lanjut")
 		fmt.Println("Pilih: ")
 		fmt.Scan(&pilihan)
 		if pilihan == "0" {
@@ -462,6 +441,5 @@ func tampilStatistik() {
 		} else {
 			addloop = false
 		}
-
 	}
 }
