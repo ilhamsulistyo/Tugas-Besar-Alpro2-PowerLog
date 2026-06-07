@@ -228,8 +228,9 @@ func sequentialSearch() {
 		var namaCari string
 		fmt.Println("=====================================================")
 		fmt.Print("Masukkan nama perangkat yang ingin dicari: ")
-		fmt.Println("=====================================================")
 		fmt.Scan(&namaCari)
+		fmt.Println("=====================================================")
+
 		var found bool = false
 		for i := 0; i < perangkat; i++ {
 			if daftarElektronik[i].nama == namaCari {
@@ -261,8 +262,8 @@ func binarySearch() {
 		var ruanganCari string
 		fmt.Println("=====================================================")
 		fmt.Print("Masukkan ruangan yang ingin dicari: ")
-		fmt.Println("=====================================================")
 		fmt.Scan(&ruanganCari)
+		fmt.Println("=====================================================")
 		var found bool = false
 		kiri := 0
 		kanan := perangkat - 1
