@@ -259,61 +259,6 @@ func binarySearch() {
 	}
 }
 
-func konsumsiHarian(e elektronik) float64 {
-	return e.watt * (e.durasi / 60)
-}
-
-func tampilStatistik() {
-	var pilihan string
-	var addloop bool = false
-	for addloop == false {
-		if perangkat == 0 {
-			fmt.Println("Belum ada perangkat yang tercatat.")
-			return
-		}
-
-		var totalDayaHarian float64 = 0
-
-		for i := 0; i < perangkat; i++ {
-			totalDayaHarian += daftarElektronik[i].watt
-		}
-
-		var temp [1000]elektronik
-		for i := 0; i < perangkat; i++ {
-			temp[i] = daftarElektronik[i]
-		}
-
-		for i := 0; i < perangkat-1; i++ {
-			for j := 0; j < perangkat-i-1; j++ {
-				if temp[j].watt < temp[j+1].watt {
-					temp[j], temp[j+1] = temp[j+1], temp[j]
-				}
-			}
-		}
-		konsumsi := konsumsiHarian(temp[0])
-
-		fmt.Println("=====================================================")
-		fmt.Println("=== Statistik Konsumsi Listrik Harian ===")
-		fmt.Printf("Total Penggunaan Daya : %.2f Watt-menit (%.2f Wh)\n", totalDayaHarian, totalDayaHarian/60)
-		fmt.Println("-----------------------------------------------------")
-		fmt.Println("Daftar Perangkat Paling Boros Energi:")
-		fmt.Printf("- Nama     : %s\n", temp[0].nama)
-		fmt.Printf("- Ruangan  : %s\n", temp[0].ruangan)
-		fmt.Printf("- Konsumsi : %.2f Wh\n", konsumsi)
-		fmt.Println("=====================================================")
-		fmt.Println("Ketik 0 untuk Exit ke beranda")
-		fmt.Println("Ketik 1 untuk Lanjut")
-		fmt.Println("Pilih: ")
-		fmt.Scan(&pilihan)
-		if pilihan == "0" {
-			addloop = true
-		} else {
-			addloop = false
-		}
-
-	}
-}
-
 func SelectionSortPerangkat() {
 	var pilihan string
 	var addloop bool = false
@@ -321,20 +266,20 @@ func SelectionSortPerangkat() {
 		if perangkat == 0 {
 			fmt.Println("=====================================================")
 			fmt.Println("Belum ada perangkat yang terdaftar untuk diurutkan!")
-				for addloop == false {
-							fmt.Println("=====================================================")
+			for addloop == false {
+				fmt.Println("=====================================================")
 
-		fmt.Println("Ketik 0 untuk Exit ke beranda")
-		fmt.Println("Ketik 1 untuk Lanjut")
-		fmt.Println("Pilih: ")
-		fmt.Scan(&pilihan)
-		if pilihan == "0" {
-			addloop = true
-		} else {
-			addloop = false
-		}
+				fmt.Println("Ketik 0 untuk Exit ke beranda")
+				fmt.Println("Ketik 1 untuk Lanjut")
+				fmt.Println("Pilih: ")
+				fmt.Scan(&pilihan)
+				if pilihan == "0" {
+					addloop = true
+				} else {
+					addloop = false
+				}
 
-	}
+			}
 			return
 		}
 		var idx_min int
@@ -377,20 +322,20 @@ func InsertionSortWatt() {
 		if perangkat == 0 {
 			fmt.Println("=====================================================")
 			fmt.Println("Belum ada watt yang terdaftar untuk diurutkan!")
-				for addloop == false {
-			fmt.Println("=====================================================")
+			for addloop == false {
+				fmt.Println("=====================================================")
 
-			fmt.Println("Ketik 0 untuk Exit ke beranda")
-			fmt.Println("Ketik 1 untuk Lanjut")
-			fmt.Println("Pilih: ")
-			fmt.Scan(&pilihan)
-			if pilihan == "0" {
-				addloop = true
-			} else {
-				addloop = false
+				fmt.Println("Ketik 0 untuk Exit ke beranda")
+				fmt.Println("Ketik 1 untuk Lanjut")
+				fmt.Println("Pilih: ")
+				fmt.Scan(&pilihan)
+				if pilihan == "0" {
+					addloop = true
+				} else {
+					addloop = false
+				}
+
 			}
-
-		}
 			return
 		}
 
@@ -412,6 +357,61 @@ func InsertionSortWatt() {
 		}
 		fmt.Println("=====================================================")
 
+		fmt.Println("Ketik 0 untuk Exit ke beranda")
+		fmt.Println("Ketik 1 untuk Lanjut")
+		fmt.Println("Pilih: ")
+		fmt.Scan(&pilihan)
+		if pilihan == "0" {
+			addloop = true
+		} else {
+			addloop = false
+		}
+
+	}
+}
+
+func konsumsiHarian(e elektronik) float64 {
+	return e.watt * (e.durasi / 60)
+}
+
+func tampilStatistik() {
+	var pilihan string
+	var addloop bool = false
+	for addloop == false {
+		if perangkat == 0 {
+			fmt.Println("Belum ada perangkat yang tercatat.")
+			return
+		}
+
+		var totalDayaHarian float64 = 0
+
+		for i := 0; i < perangkat; i++ {
+			totalDayaHarian += daftarElektronik[i].watt
+		}
+
+		var temp [1000]elektronik
+		for i := 0; i < perangkat; i++ {
+			temp[i] = daftarElektronik[i]
+		}
+
+		for i := 0; i < perangkat-1; i++ {
+			for j := 0; j < perangkat-i-1; j++ {
+				if temp[j].watt < temp[j+1].watt {
+					temp[j], temp[j+1] = temp[j+1], temp[j]
+				}
+			}
+		}
+		konsumsi := konsumsiHarian(temp[0])
+
+		fmt.Println("=====================================================")
+		fmt.Println("=== Statistik Konsumsi Listrik Harian ===")
+		fmt.Printf("Total Penggunaan Daya : %.2f Watt-menit (%.2f Wh)\n", totalDayaHarian, totalDayaHarian/60)
+		fmt.Println("-----------------------------------------------------")
+		fmt.Println("Daftar Perangkat Paling Boros Energi:")
+		fmt.Printf("- Nama     : %s\n", temp[0].nama)
+		fmt.Printf("- Ruangan  : %s\n", temp[0].ruangan)
+		fmt.Printf("- Konsumsi : %.2f Wh\n", konsumsi)
+		fmt.Println("=====================================================")
 		fmt.Println("Ketik 0 untuk Exit ke beranda")
 		fmt.Println("Ketik 1 untuk Lanjut")
 		fmt.Println("Pilih: ")
