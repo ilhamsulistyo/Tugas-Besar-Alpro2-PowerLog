@@ -245,35 +245,33 @@ go run main.go
 
 ## 📊 Sorting Data
 
-| Fitur  | Keterangan                |
-| ------ | ------------------------- |
-| Menu   | 7                         |
-| Field  | Nama / Kategori / Nominal |
-| Urutan | Ascending / Descending    |
-| Metode | Selection Sort            |
+| Fitur  | Keterangan                     |
+| ------ | ------------------------------ |
+| Menu   | 7                              |
+| Field  | Nama / Ruangan / Watt / Durasi |
+| Urutan | Ascending / Descending         |
+| Metode | Selection Sort                 |
 
 ---
 
 ## Insertion Sort
 
-| Fitur  | Keterangan                |
-| ------ | ------------------------- |
-| Menu   | 8                         |
-| Field  | Nama / Kategori / Nominal |
-| Urutan | Ascending / Descending    |
-| Metode | Insertion Sort            |
+| Fitur  | Keterangan                     |
+| ------ | ------------------------------ |
+| Menu   | 8                              |
+| Field  | Nama / Ruangan / Watt / Durasi |
+| Urutan | Ascending / Descending         |
+| Metode | Insertion Sort                 |
 
 ---
 
-## 📈 Statistik Tagihan
+## 📈 Statistik Konsumsi Listrik
 
-| Statistik              | Keterangan                       |
-| ---------------------- | -------------------------------- |
-| Total tagihan          | Jumlah seluruh nominal           |
-| Tagihan lunas          | Data & total tagihan lunas       |
-| Tagihan belum lunas    | Data & total tagihan belum lunas |
-| Persentase lunas       | (lunas / total) × 100            |
-| Persentase belum lunas | (belum / total) × 100            |
+| Statistik                  | Keterangan                       |
+| -------------------------- | -------------------------------- |
+| Total penggunaan daya      | Jumlah total seluruh penggunaan  |
+| Perangkat Terboros         | Daftar perangkat terboros        |
+
 
 ---
 
@@ -295,12 +293,16 @@ go run main.go
 # 📦 Contoh Output
 
 ```bash
-===== DATA TAGIHAN =====
-
-Data ke- 1
-Nama : Listrik
-Kategori : Rumah
-Nominal : 250000
-JatuhTempo : 15
-Status : Belum
+============================================================================
+Pilih menu: 4
+============================================================================
+Nomor Nama Ruangan Daya Durasi: 
+Nomor           Nama            Ruangan         Daya(Watt)      Durasi(Jam)
+1               Kulkas          Dapur           120             24
+2               Kipas Angin     Kamar Tidur     50              8
+3               Televisi	    Ruang Keluarga	100         	5
+4	            AC	            Kamar Utama	    400         	10
+5	            Mesin Cuci	    Area Cuci	    300         	2          
+============================================================================
+Ketik 0 untuk Exit ke beranda atau Ketik 1 untuk Lanjut
 ```
