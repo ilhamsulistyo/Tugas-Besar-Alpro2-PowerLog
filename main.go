@@ -148,10 +148,9 @@ func deleteelektronik() {
 		fmt.Scan(&idx)
 		idx--
 
-		if idx >= 0 && idx < perangkat {
-			for i := idx; i < perangkat; i++ {
-				daftarElektronik[i] = daftarElektronik[i+1]
-			}
+		for i := idx; i < perangkat-1; i++ {
+			daftarElektronik[i] = daftarElektronik[i+1]
+		}	
 			perangkat--
 			fmt.Println("Perangkat berhasil dihapus!")
 		} else {
