@@ -100,7 +100,17 @@ func updateelektronik() {
 	for addloop == false {
 		var idx int
 
-		mencatatPerangkat()
+		fmt.Println("=====================================================")
+		fmt.Println("Daftar Perangkat Saat Ini:")
+		if perangkat == 0 {
+			fmt.Println("[ Data Kosong ]")
+		} else {
+			for i := 0; i < perangkat; i++ {
+				fmt.Printf("%d. Nama: %s | Ruangan: %s | Daya: %.1f watt | Durasi: %.1f jam\n",
+					i+1, daftarElektronik[i].nama, daftarElektronik[i].ruangan, daftarElektronik[i].watt, daftarElektronik[i].durasi)
+			}
+		}
+		fmt.Println("=====================================================")
 
 		fmt.Print("Masukkan nomor perangkat yang ingin diubah: ")
 		fmt.Scan(&idx)
@@ -124,9 +134,9 @@ func updateelektronik() {
 			fmt.Println("Perangkat tidak ditemukan!")
 		}
 
-		fmt.Println("Ketik 0 untuk Exit ke beranda")
-		fmt.Println("Ketik 1 untuk Lanjut")
-		fmt.Println("Pilih: ")
+		fmt.Printf("Ketik 0 untuk Exit ke beranda \n")
+		fmt.Printf("Ketik 1 untuk Lanjut \n")
+		fmt.Printf("Pilih: ")
 		fmt.Scan(&pilihan)
 		if pilihan == "0" {
 			addloop = true
@@ -188,11 +198,16 @@ func mencatatPerangkat() {
 	var pilihan string
 	var addloop bool = false
 	for addloop == false {
+		fmt.Println("=====================================================")
 		fmt.Println("Nomor Nama Ruangan Daya Durasi: ")
-		for i := 0; i < perangkat; i++ {
-			fmt.Printf("%d %s %s %.1f watt %.1f menit\n", i+1, daftarElektronik[i].nama, daftarElektronik[i].ruangan, daftarElektronik[i].watt, daftarElektronik[i].durasi)
-
+		if perangkat == 0 {
+			fmt.Println("[ Data Kosong ]")
+		} else {
+			for i := 0; i < perangkat; i++ {
+				fmt.Printf("%d. %s (Ruangan: %s, %.1f watt)\n", i+1, daftarElektronik[i].nama, daftarElektronik[i].ruangan, daftarElektronik[i].watt)
+			}
 		}
+		fmt.Println("=====================================================")
 		fmt.Println("Ketik 0 untuk Exit ke beranda")
 		fmt.Println("Ketik 1 untuk Lanjut")
 		fmt.Println("Pilih: ")
@@ -211,7 +226,9 @@ func sequentialSearch() {
 	var addloop bool = false
 	for addloop == false {
 		var namaCari string
+		fmt.Println("=====================================================")
 		fmt.Print("Masukkan nama perangkat yang ingin dicari: ")
+		fmt.Println("=====================================================")
 		fmt.Scan(&namaCari)
 		var found bool = false
 		for i := 0; i < perangkat; i++ {
@@ -242,7 +259,9 @@ func binarySearch() {
 	var addloop bool = false
 	for addloop == false {
 		var ruanganCari string
+		fmt.Println("=====================================================")
 		fmt.Print("Masukkan ruangan yang ingin dicari: ")
+		fmt.Println("=====================================================")
 		fmt.Scan(&ruanganCari)
 		var found bool = false
 		kiri := 0
