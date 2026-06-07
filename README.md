@@ -1,4 +1,4 @@
-# 🏠POWERLOG - Sistem Pemantauan Enegrgi(listrik) Rumah Tangga
+# 🏠POWERLOG - Sistem Pemantauan Energi(listrik) Rumah Tangga
 
 POWERLOG adalah aplikasi sederhana berbasis **Golang** untuk mempermudah pencatatan energi rumah tangga
 
@@ -87,3 +87,220 @@ go run main.go
 ---
 
 # 📌 Cara Penggunaan Program
+
+Power Log adalah aplikasi sederhana berbasis **Golang** untuk memantau dan mencatat penggunaan daya listrik pada berbagai perangkat elektronik rumah tangga menggunakan konsep algoritma dan struktur data dasar.
+
+Program ini dibuat untuk melatih pemahaman tentang:
+
+- Array statis
+- Struct
+- CRUD (Create, Read, Update, Delete)
+- Searching (Sequential & Binary Search)
+- Sorting (Selection & Insertion Sort)
+- Statistik data
+- Perulangan & Percabangan
+
+---
+
+# 🚀 Fitur Program
+
+- Tambah data tagihan
+- Ubah data tagihan
+- Hapus data tagihan
+- Menampilkan seluruh data
+- Sequential Search (nama / perangkat)
+- Binary Search (berdasarkan ruang)
+- Selection Sort
+- Insertion Sort
+- Statistik total penggunaan daya harian dan daftar perangkat yang paling boros energi
+
+---
+
+# 🧱 Struktur Data
+
+```go
+type Tagihan struct {
+    nama    string
+	ruangan string
+	watt    float64
+	durasi  float64
+}
+
+| Atribut    | Tipe Data | Keterangan          |
+| ---------- | --------- | ------------------- |
+| Nama       | string    | Nama Perangkat      |
+| Ruangan    | string    | Nama Ruangan        |
+| Watt       | float64   | Besaran Watt        |
+| Durasi     | float64   | Lama Penggunaan     |
+```
+
+# 📋 Menu Program
+
+```bash
+===== SIMTAB =====
+
+1. Tambah Tagihan
+2. Ubah Tagihan
+3. Hapus Tagihan
+4. Tampilkan Data
+5. Sequential Search
+6. Binary Search
+7. Selection Sort
+8. Insertion Sort
+9. Statistik
+10. Keluar
+```
+
+---
+
+# ⚙️ Cara Menjalankan Program
+
+## 1. Install Golang
+
+Cek apakah Golang sudah terinstall:
+
+```bash
+go version
+```
+
+---
+
+## 2. Simpan File
+
+Simpan source code dengan nama:
+
+```text
+main.go
+```
+
+---
+
+## 3. Jalankan Program
+
+```bash
+go run main.go
+```
+
+---
+
+# 📌 Cara Penggunaan Program
+
+## ➕ Tambah Perangkat
+
+| Input       | Contoh  |
+| ----------- | ------- |
+| Nama        | Kulkas  |
+| Ruangan     | Dapur   |
+| Watt        | 120     |
+| Durasi      | 24      |
+
+---
+
+## 📄 Tampilkan Data
+
+| Menu | Fungsi                 |
+| ---- | ---------------------- |
+| 4    | Menampilkan semua data |
+
+---
+
+## ✏️ Ubah Data
+
+| Langkah | Keterangan       |
+| ------- | ---------------- |
+| 1       | Pilih menu 2     |
+| 2       | Pilih nomor data |
+| 3       | Input data baru  |
+
+---
+
+## ❌ Hapus Data
+
+| Langkah | Keterangan              |
+| ------- | ----------------------- |
+| 1       | Pilih menu 3            |
+| 2       | Pilih data yang dihapus |
+
+---
+
+## 🔎 Sequential Search
+
+| Fitur     | Keterangan         |
+| --------- | ------------------ |
+| Menu      | 5                  |
+| Pencarian | Nama atau Kategori |
+| Metode    | Linear Search      |
+
+---
+
+## ⚡ Binary Search
+
+| Fitur  | Keterangan                     |
+| ------ | ------------------------------ |
+| Menu   | 6                              |
+| Data   | Harus terurut berdasarkan Nama |
+| Metode | Binary Search                  |
+
+---
+
+## 📊 Sorting Data
+
+| Fitur  | Keterangan                |
+| ------ | ------------------------- |
+| Menu   | 7                         |
+| Field  | Nama / Kategori / Nominal |
+| Urutan | Ascending / Descending    |
+| Metode | Selection Sort            |
+
+---
+
+## Insertion Sort
+
+| Fitur  | Keterangan                |
+| ------ | ------------------------- |
+| Menu   | 8                         |
+| Field  | Nama / Kategori / Nominal |
+| Urutan | Ascending / Descending    |
+| Metode | Insertion Sort            |
+
+---
+
+## 📈 Statistik Tagihan
+
+| Statistik              | Keterangan                       |
+| ---------------------- | -------------------------------- |
+| Total tagihan          | Jumlah seluruh nominal           |
+| Tagihan lunas          | Data & total tagihan lunas       |
+| Tagihan belum lunas    | Data & total tagihan belum lunas |
+| Persentase lunas       | (lunas / total) × 100            |
+| Persentase belum lunas | (belum / total) × 100            |
+
+---
+
+# 🧠 Algoritma yang Digunakan
+
+| Algoritma         | Fungsi                           |
+| ----------------- | -------------------------------- |
+| Sequential Search | Pencarian data secara linear     |
+| Binary Search     | Pencarian data pada data terurut |
+| Selection Sort    | Mengurutkan data (selection)     |
+| Insertion Sort    | Mengurutkan data (insertion)     |
+| Array             | Menyimpan data                   |
+| Struct            | Struktur data tagihan            |
+| Perulangan        | Menampilkan & memproses data     |
+| Percabangan       | Logika menu & kondisi program    |
+
+---
+
+# 📦 Contoh Output
+
+```bash
+===== DATA TAGIHAN =====
+
+Data ke- 1
+Nama : Listrik
+Kategori : Rumah
+Nominal : 250000
+JatuhTempo : 15
+Status : Belum
+```
