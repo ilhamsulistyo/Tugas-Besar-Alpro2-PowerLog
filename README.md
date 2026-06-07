@@ -45,105 +45,6 @@ Selamat datang di PowerLog!
 3. Hapus Perangkat Elektronik
 4. Tampilkan Perangkat Elektronik
 5. Sequential Search Perangkat Elektronik
-6. Binary Search Perangkat Elektronik
-7. Selection Sort Perangkat Elektronik
-8. Insertion Sort Perangkat Elektronik
-9. Statistik Perangkat Elektronik
-0. Keluar
-=====================================================
-```
-
-
----
-
-# ⚙️ Cara Menjalankan Program
-
-## 1. Install Golang
-
-Cek apakah Golang sudah terinstall:
-
-```bash
-go version
-```
-
----
-
-## 2. Simpan File
-
-Simpan source code dengan nama:
-
-```text
-main.go
-```
-
----
-
-## 3. Jalankan Program
-
-```bash
-go run main.go
-```
-
----
-
-# 📌 Cara Penggunaan Program
-
-Power Log adalah aplikasi sederhana berbasis **Golang** untuk memantau dan mencatat penggunaan daya listrik pada berbagai perangkat elektronik rumah tangga menggunakan konsep algoritma dan struktur data dasar.
-
-Program ini dibuat untuk melatih pemahaman tentang:
-
-- Array statis
-- Struct
-- CRUD (Create, Read, Update, Delete)
-- Searching (Sequential & Binary Search)
-- Sorting (Selection & Insertion Sort)
-- Statistik data
-- Perulangan & Percabangan
-
----
-
-# 🚀 Fitur Program
-
-- Tambah data tagihan
-- Ubah data tagihan
-- Hapus data tagihan
-- Menampilkan seluruh data
-- Sequential Search (nama / perangkat)
-- Binary Search (berdasarkan ruang)
-- Selection Sort
-- Insertion Sort
-- Statistik total penggunaan daya harian dan daftar perangkat yang paling boros energi
-
----
-
-# 🧱 Struktur Data
-
-```go
-type Tagihan struct {
-    nama    string
-	ruangan string
-	watt    float64
-	durasi  float64
-}
-
-| Atribut    | Tipe Data | Keterangan          |
-| ---------- | --------- | ------------------- |
-| Nama       | string    | Nama Perangkat      |
-| Ruangan    | string    | Nama Ruangan        |
-| Watt       | float64   | Besaran Watt        |
-| Durasi     | float64   | Lama Penggunaan     |
-```
-
-# 📋 Menu Program
-
-```bash
-=====================================================
-Selamat datang di PowerLog!
-1. Tambah Perangkat Elektronik
-2. Ubah Perangkat Elektronik
-3. Hapus Perangkat Elektronik
-4. Tampilkan Perangkat Elektronik
-5. Sequential Search Perangkat Elektronik
 6. Binary Search Perangkat Elektronik Pada Ruangan
 7. Selection Sort Perangkat Elektronik Berdasarkan Abjad
 8. Insertion Sort Perangkat Elektronik Berdasarkan Daya(Watt)
@@ -151,8 +52,6 @@ Selamat datang di PowerLog!
 0. Keluar
 =====================================================
 ```
-
----
 
 # ⚙️ Cara Menjalankan Program
 
@@ -187,6 +86,10 @@ go run main.go
 # 📌 Cara Penggunaan Program
 
 ## ➕ Tambah Perangkat
+
+| Menu | Fungsi                      |
+| ---- | --------------------------- |
+| 1    | Tambah Perangkat Elektronik |
 
 | Input       | Contoh  |
 | ----------- | ------- |
@@ -267,6 +170,10 @@ go run main.go
 ---
 
 ## 📈 Statistik Konsumsi Listrik
+
+| Menu | Fungsi                      |
+| ---- | --------------------------- |
+| 9    | Menampilkan Statistik       |
 
 | Statistik                  | Keterangan                       |
 | -------------------------- | -------------------------------- |
