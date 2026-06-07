@@ -41,8 +41,9 @@ func main() {
 		} else if beranda == 4 {
 			mencatatPerangkat()
 		} else if beranda == 5 {
-		} else if beranda == 6 {
 			sequentialSearch()
+		} else if beranda == 6 {
+			binarySearch()
 		} else if beranda == 7 {
 			SelectionSortPerangkat()
 		} else if beranda == 8 {
@@ -257,7 +258,7 @@ func binarySearch() {
 			addloop = false
 		}
 	}
-}	
+}
 
 func konsumsiHarian(e elektronik) float64 {
 	return e.watt * (e.durasi / 60)
@@ -310,52 +311,5 @@ func tampilStatistik() {
 		} else {
 			addloop = false
 		}
-
 	}
-	
-	func SelectionSortPerangkat() {
-
-	var idx_min int
-	var T daftarElektronik
-
-	for i:= 0; i < length(T[].perangkat); i++ {
-		idx_min = i - 1
-		j := i
-		for j < n {
-			if T[idx_min].watt < T[j].watt {
-				idx_min = j
-			}
-			j = j + 1
-		}
-		t = T[idx_min]
-		T[idx_min] = T[i-1]
-		T[i-1] = t
-		i = i + 1
-	}
-	for i := 0; i < length(T[]); i++ {
-		fmt.Println(T[i])
-	} 
-}
-
-func InsertionSortWatt(watt int) {
-
-	
-	var idx_min int
-	var T daftarElektronik
-
-	for i:= 0; i < length(T[]); i++ {
-		idx_min = i - 1
-		j := i
-		for j < n {
-			if [idx_min].watt < T[j].watt {
-				idx_min = j
-			}
-			j = j + 1
-		}
-		t = T[idx_min]
-		T[idx_min] = T[i-1]
-		T[i-1] = t
-		i = i + 1
-	    }
-    }
 }
